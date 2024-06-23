@@ -3,6 +3,7 @@ let g:maplocalleader = " "
 let g:vimtex_view_method = "skim"
 let g:airline_powerline_fonts = 1
 
+"Hallo paldi
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
