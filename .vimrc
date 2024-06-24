@@ -2,13 +2,28 @@ let g:mapleader = " "
 let g:maplocalleader = " "
 let g:vimtex_view_method = "skim"
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
-"Hallo paldi
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
+nnoremap <leader>vs <ESC> :vsplit<CR><C-w>w
+nnoremap <leader>hs <ESC> :split<CR><C-w>w
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+
+nnoremap <leader>b1 :buffer 1<CR>
+nnoremap <leader>b2 :buffer 2<CR>
+nnoremap <leader>b3 :buffer 3<CR>
+nnoremap <leader>b4 :buffer 4<CR>
+nnoremap <leader>b5 :buffer 5<CR>
+nnoremap <leader>b6 :buffer 6<CR>
+nnoremap <leader>b7 :buffer 7<CR>
+nnoremap <leader>b8 :buffer 8<CR>
+nnoremap <leader>b9 :buffer 9<CR>
 
 noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -DONPC -O2 -o %< % && ./%< < inp<CR>
 inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -DONPC -O2 -o %< % && ./%< < inp<CR>
@@ -57,7 +72,9 @@ Plug 'nordtheme/vim'
 call plug#end()
 
 syntax enable
-colorscheme nord
+set background=dark
+let g:gruvbox_italic = '1'
+colorscheme gruvbox
 
 let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
 let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
@@ -67,16 +84,16 @@ let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
 set updatetime=300
 set signcolumn=yes
 
-inoremap <silent><expr> <TAB>
+"inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+"inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 let g:vimtex_quickfix_ignore_filters = [
       \ 'Underfull',
       \ 'Overfull',

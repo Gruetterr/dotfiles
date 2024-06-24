@@ -10,5 +10,5 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return {
-	s({ trig = "hi" }, { t("Hello world!") }),
+	s({ trig = "hi", snippetType = "autosnippet" }, { t("Hello world!") }),
 }
