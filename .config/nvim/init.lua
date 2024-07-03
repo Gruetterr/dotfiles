@@ -3,4 +3,4 @@ require("keymaps")
 require("lazy-bootstrapper")
 
 -- vim.o.background = "dark"
-vim.cmd.colorscheme("iceberg")
+vim.cmd.colorscheme("nord")

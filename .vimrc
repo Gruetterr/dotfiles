@@ -10,6 +10,9 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
+nnoremap j gj
+nnoremap k gk
+
 nnoremap <leader>vs <ESC> :vsplit<CR><C-w>w
 nnoremap <leader>hs <ESC> :split<CR><C-w>w
 nnoremap <leader>bn :bnext<CR>
@@ -25,8 +28,10 @@ nnoremap <leader>b7 :buffer 7<CR>
 nnoremap <leader>b8 :buffer 8<CR>
 nnoremap <leader>b9 :buffer 9<CR>
 
-noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -DONPC -O2 -o %< % && ./%< < inp<CR>
-inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -DONPC -O2 -o %< % && ./%< < inp<CR>
+noremap <F10> <ESC> :w <CR> :!g++ -std=c++20 -Wall -DONPC -O2 -o %< % && ./%< < inp<CR>
+inoremap <F10> <ESC> :w <CR> :!g++ -std=c++20 -Wall -DONPC -O2 -o %< % && ./%< < inp<CR>
+
+autocmd BufWritePost * if expand('%:p') !~# '\.vimrc$' | silent! %s/ / /g | endif
 
 set tabstop=2
 set backspace=2
@@ -47,6 +52,7 @@ filetype plugin on
 filetype indent on
 
 set encoding=utf-8
+set fileencoding=utf-8
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -56,6 +62,8 @@ endif
 
 call plug#begin()
 
+Plug 'tpope/vim-commentary'
+Plug 'bfrg/vim-cpp-modern'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-tree/nvim-web-devicons'

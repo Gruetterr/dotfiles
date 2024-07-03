@@ -7,10 +7,6 @@ return {
 
 	config = function()
 		local ls = require("luasnip")
-		ls.config.set_config({
-			enable_autosnippets = true,
-			store_selection_keys = "<Tab>",
-		})
 
 		vim.cmd([[
       " Expand or jump in insert mode
@@ -25,5 +21,9 @@ return {
     ]])
 
 		require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/snippets/" } })
+		ls.config.set_config({
+			enable_autosnippets = true,
+			store_selection_keys = "<Tab>",
+		})
 	end,
 }
