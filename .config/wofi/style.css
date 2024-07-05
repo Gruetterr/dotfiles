@@ -1,0 +1,48 @@
+* {
+  font-family: Hack Nerd Font Mono;
+  color: #e5e9f0;
+}
+
+window {
+  background-color: #282828;
+  border: 2px solid #1d2021;
+  border-radius: 15px;
+}
+
+#outer-box {
+  margin-bottom: 12px;
+}
+
+#input {
+  border: none;
+  background-color: #1d2021;
+  margin: 8px;
+  box-shadow: none; /* Remove blue "border" */
+}
+
+#inner-box {
+  background-color: #282828;
+  margin: 7px;
+  margin-top: 0;
+}
+
+#entry {
+  padding-left: 5px;
+  border: none;
+  margin-left: -5px;
+  margin-right: -5px;
+  outline: none;
+}
+
+#entry:selected {
+  background-color: #504945;
+}
+
+#text {
+  margin: 2px;
+}
+
+/* Hide backspace icon */
+.right {
+  color: transparent;
+}

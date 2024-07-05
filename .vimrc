@@ -1,9 +1,11 @@
 let g:mapleader = " "
 let g:maplocalleader = " "
-let g:vimtex_view_method = "skim"
+let g:vimtex_view_method = "zathura"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+" let g:airline#extensions#tabline#buffer_idx_mode = 1
+"
+
 
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
@@ -76,6 +78,7 @@ Plug 'lervag/VimTex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'cocopon/iceberg.vim'
 Plug 'nordtheme/vim'
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
@@ -83,6 +86,8 @@ syntax enable
 set background=dark
 let g:gruvbox_italic = '1'
 colorscheme gruvbox
+
+autocmd FileType cpp ClangFormatAutoEnable
 
 let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
 let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
@@ -93,9 +98,9 @@ set updatetime=300
 set signcolumn=yes
 
 "inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
+      " \ coc#pum#visible() ? coc#pum#next(1) :
+      " \ CheckBackspace() ? "\<Tab>" :
+      " \ coc#refresh()
 "inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
