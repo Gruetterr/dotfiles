@@ -64,6 +64,7 @@ endif
 
 call plug#begin()
 
+Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 Plug 'bfrg/vim-cpp-modern'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}

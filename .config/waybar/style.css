@@ -1,3 +1,5 @@
+@import "mocha.css";
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Hack Nerd Font;
@@ -10,16 +12,18 @@
 }
 
 window#waybar {
-    background: #282828;
+    background-color: shade(@base, 0.9);
+    opacity: 0.85;
 }
 
 #workspaces button {
-  margin: 5px;
-  color: #a89984;
+  /* margin: 5px; */
+  color: @overlay0;
+  margin: 2 -10px;
 }
 
 #workspaces button.focused {
-  color: #ebdbb2;
+  color: @text;
 }
 
 button {
@@ -62,12 +66,13 @@ button:hover {
 
 #pulseaudio,
 #battery {
+  color: #ffffff;
   margin-right: 20px;
 }
 
 #window,
 #workspaces {
-    margin: 0 4px;
+    /* margin: 0 4px; */
 }
 
 /* If workspaces is the leftmost module, omit left margin */

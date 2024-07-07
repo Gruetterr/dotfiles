@@ -11,83 +11,67 @@
     // "margin-right": 5,
     // Choose the order of the modules
     "modules-left": [
-        "clock",
+      "clock",
     ],
     "modules-center": [
       "sway/workspaces",
     ],
     "modules-right": [
-        "pulseaudio",
-        "battery",
+      "pulseaudio",
+      "battery",
     ],
-    // Modules configuration
-//    "sway/workspaces": {
-//        "disable-scroll": true,
-//        "all-outputs": true,
-//        "warp-on-scroll": false,
-//        "format": "{icon}",
-//       "format-icons": {
-//           "1": "",
-//           "2": "",
-//           "3": "",
-//           "4": "",
-//         "5": "",
-//       "urgent": "",
-//     "default": ""
-//     }
-// },
     "custom/weather": {
       "tooltip": false,
       "exec": "curl 'https://wttr.in/Zurich?format=1'",
     },
     "clock": {
       "interval": 1,
-      "format": "<span color=\"#458588\"></span>  {:%d.%m.%y, %H:%M:%S}",
+      "format": "<span color=\"#89b4fa\"></span>  {:%d.%m.%y, %H:%M:%S}",
     },
-    
+
     "battery": {
-        "states": {
+      "states": {
             // "good": 95,
             "warning": 30,
             "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% <span color=\"#689d6a\">󰂄</span>",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+      },
+      "format": "{capacity}% {icon}",
+      "format-full": "{capacity}% {icon}",
+      "format-charging": "{capacity}% <span color=\"#a6e3a1\">󰂄</span>",
+      "format-plugged": "{capacity}% ",
+      "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["<span color=\"#cc241d\"></span>", "<span color=\"#d79921\"></span>", "<span color=\"#689d6a\"></span>", "<span color=\"#689d6a\"></span>", "<span color=\"#689d6a\"></span>"]
+        "format-icons": ["<span color=\"#f38ba8\"></span>", "<span color=\"#f9e2af\"></span>", "<span color=\"#a6e3a1\"></span>", "<span color=\"#a6e3a1\"></span>", "<span color=\"#a6e3a1\"></span>"]
     },
 
-        "pulseaudio": {
+    "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% <span color=\"#458588\">{icon}</span>",
+        "format": "{volume}% <span color=\"#89b4fa\">{icon}</span>",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
     "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+      "format": "{icon} {}",
+      "return-type": "json",
+      "max-length": 40,
+      "format-icons": {
+        "spotify": "",
+        "default": "🎜"
+      },
+      "escape": true,
+      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }

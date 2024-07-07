@@ -1,2 +1,4 @@
 set default-bg \#282828
 set database sqlite
+
+include catppuccin-mocha
