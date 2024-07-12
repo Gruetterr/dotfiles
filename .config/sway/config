@@ -18,9 +18,9 @@ set $aqua #689d6a
 set $gray #a89984
 
 # target                 title     bg    text   indicator  border
-client.focused           $lavender $base $text  $lavender $lavender
-client.focused_inactive  $overlay0 $base $text  $overlay0 $overlay0
-client.unfocused         $overlay0 $base $text  $overlay0 $overlay0
+client.focused           $lavender $base $text  $gray $gray
+client.focused_inactive  $overlay0 $base $text  $bg $bg
+client.unfocused         $overlay0 $base $text  $bg $bg
 client.urgent            $peach    $base $peach $peach  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
@@ -61,7 +61,7 @@ titlebar_border_thickness 0
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg "976156.png" fill
+output * bg "nyc1.jpeg" fill
 output HDMI-A-1 mode 1920x1080@240Hz
 output HDMI-A-1 pos 0 0
 output eDP-1 pos 0 1080
@@ -101,7 +101,13 @@ output eDP-1 pos 0 1080
 input "1452:850:Apple_MTP_keyboard" {
   xkb_layout ch
   xkb_variant de_mac
-  xkb_options ctrl:swapcaps
+  xkb_options ctrl:swapcaps,lv3:lalt_switch
+}
+
+input "1452:592:Keychron_K2" {
+  xkb_layout ch
+  xkb_variant de_mac
+  xkb_options ctrl:swapcaps,lv3:lalt_switch
 }
 
 input "1452:850:Apple_MTP_multi-touch" {
@@ -263,9 +269,22 @@ bindsym $mod+r mode "resize"
 bar {
   swaybar_command waybar
 }
+# bar {
+#     position bottom
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#
+#     colors {
+#         statusline #ffffff
+#         background #323232
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 
-gaps outer 5
-gaps inner 5
+# gaps outer 5
+# gaps inner 5
 
 workspace 1
 exec alacritty

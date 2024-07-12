@@ -64,13 +64,12 @@ endif
 
 call plug#begin()
 
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-commentary'
 Plug 'bfrg/vim-cpp-modern'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-tree/nvim-web-devicons'
-Plug 'nordtheme/vim'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'

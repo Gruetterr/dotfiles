@@ -3,7 +3,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Hack Nerd Font;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #waybar {
@@ -12,18 +12,19 @@
 }
 
 window#waybar {
-    background-color: shade(@base, 0.9);
-    opacity: 0.85;
+  /*background-color: shade(@base, 0.9);*/
+  background-color: #000000;
+  /*opacity: 0.85;*/
 }
 
 #workspaces button {
   /* margin: 5px; */
-  color: @overlay0;
-  margin: 2 -10px;
+  color: #665c54;
+  margin: 0 -10px;
 }
 
 #workspaces button.focused {
-  color: @text;
+  color: #ffffff;
 }
 
 button {

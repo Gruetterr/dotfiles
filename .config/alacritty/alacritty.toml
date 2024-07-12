@@ -1,6 +1,6 @@
-import = [
-"~/.config/alacritty/catppuccin-mocha.toml"
-]
+# import = [
+# "~/.config/alacritty/catppuccin-mocha.toml"
+# ]
 
 [env]
 TERM = "xterm-256color"
@@ -15,5 +15,8 @@ style = "Regular"
 [window]
 dynamic_padding = true
 opacity = 0.85
+
+[colors.primary]
+# background = "#000000"
 
 

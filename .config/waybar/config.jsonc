@@ -11,22 +11,23 @@
     // "margin-right": 5,
     // Choose the order of the modules
     "modules-left": [
-      "clock",
+      "clock"
     ],
     "modules-center": [
-      "sway/workspaces",
+      "sway/workspaces"
     ],
     "modules-right": [
       "pulseaudio",
-      "battery",
+      "battery"
     ],
     "custom/weather": {
       "tooltip": false,
-      "exec": "curl 'https://wttr.in/Zurich?format=1'",
+      "exec": "curl 'https://wttr.in/Zurich?format=1'"
     },
     "clock": {
       "interval": 1,
-      "format": "<span color=\"#89b4fa\"></span>  {:%d.%m.%y, %H:%M:%S}",
+      //"format": "<span color=\"#89b4fa\"></span>  {:%d.%m.%y, %H:%M:%S}"
+      "format": "{:%d.%m.%y, %H:%M:%S}" 
     },
 
     "battery": {
