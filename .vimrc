@@ -78,7 +78,7 @@ Plug 'lervag/VimTex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'cocopon/iceberg.vim'
 Plug 'nordtheme/vim'
-Plug 'rhysd/vim-clang-format'
+" Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
