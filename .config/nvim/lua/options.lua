@@ -1,7 +1,10 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-vim.opt.backspace = '2'
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+vim.opt.backspace = "2"
 vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.autowrite = true
@@ -14,6 +17,9 @@ vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.opt.number = true
 
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 vim.opt.showmode = false
 
+-- vim.cmd([[
+--   autocmd BufWritePost * if expand('%:p') !~# '/options\.lua$' | silent! %s/ / /ge | endif
+-- ]])

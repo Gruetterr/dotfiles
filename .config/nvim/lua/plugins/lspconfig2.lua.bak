@@ -1,0 +1,68 @@
+
+return {
+  { -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      { 'williamboman/mason.nvim', config = true },
+      'williamboman/mason-lspconfig.nvim',
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
+      { 'j-hui/fidget.nvim', opts = {} },
+      { 'folke/neodev.nvim', opts = {} },
+    },
+    config = function()
+      local lspconfig = require('lspconfig')
+
+      -- Define the path to your local clangd
+      local clangd_path = "/usr/bin/clangd"  -- Update this to your local clangd path
+
+      -- Setup function for each LSP server
+      local setup_servers = function()
+        -- Configure servers
+        lspconfig.clangd.setup {
+          cmd = { clangd_path },
+          capabilities = vim.lsp.protocol.make_client_capabilities(),
+          on_attach = function(client, bufnr)
+            -- Example keybindings
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+          end,
+        }
+
+        lspconfig.pyright.setup {}
+        lspconfig.vimls.setup {}
+        lspconfig.lua_ls.setup {
+          settings = {
+            Lua = {
+              completion = {
+                callSnippet = 'Replace',
+              },
+            },
+          },
+        }
+
+        -- Add more LSP server setups as needed
+      end
+
+      -- Call setup function
+      setup_servers()
+
+      -- Automatically setup servers again after `mason` finishes
+      require('mason-lspconfig').setup_handlers {
+        function(server_name)
+          setup_servers()
+        end,
+      }
+
+      -- Prevent `mason` from managing `clangd`
+      require('mason').setup()
+      require('mason-tool-installer').setup {
+        ensure_installed = {
+          'pyright',
+          'vimls',
+          'lua_ls',
+          -- Add other LSP servers here if needed
+        },
+      }
+    end,
+  },
+}
+
