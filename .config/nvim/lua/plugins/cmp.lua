@@ -48,10 +48,6 @@ return {
 					end,
 				},
 
-				-- For an understanding of why these mappings were
-				-- chosen, you will need to read `:help ins-completion`
-				--
-				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
 					["<CR>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then

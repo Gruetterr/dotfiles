@@ -23,11 +23,7 @@ return {
 			button("e", "[󰈔] New file", ":ene <BAR> startinsert <CR>"),
 			button("f", "[󰍉] Find file", ":cd $HOME | Telescope find_files hidden=true no_ignore=true<CR>"),
 			button("r", "[󰪶] Recent", ":Telescope oldfiles<CR>"),
-			button(
-				"c",
-				"[󰉁] Config",
-				":cd $HOME/.config/nvim/ | Telescope find_files hidden=true no_ignore=true<CR>"
-			),
+			button("c", "[󰉁] Config", ":cd $HOME/.config/nvim/ | Telescope find_files hidden=true<CR>"),
 			button("q", "[] Quit", ":qa<CR>"),
 		}
 

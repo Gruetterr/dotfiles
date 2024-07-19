@@ -15,16 +15,8 @@ int32_t main() {
   cin >> t;
 
   for (int i = 0; i < t; i++) {
-#ifdef ONPC
-    cout << "Testcase " << i << ": ";
-#endif
     solve();
-#ifdef ONPC
-    cout << "----------------------------\n";
-#endif
   }
-#ifdef ONPC
-  cout << "\nTime: " << clock() * 1.0 / CLOCKS_PER_SEC << "s\n";
-#endif
+
   return 0;
 }

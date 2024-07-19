@@ -1,4 +1,3 @@
-set highlight-active-color "#ffffff"
 set database sqlite
 
 include catppuccin-mocha
